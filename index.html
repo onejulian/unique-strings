@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remover Duplicados</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
 
-    <textarea id="inputText" rows="10" cols="30"></textarea>
-    <button onclick="removeDuplicates()">Remover Duplicados y Copiar</button>
-    <textarea id="outputText" rows="10" cols="30" readonly></textarea>
+    <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4">
+        <textarea id="inputText" rows="10" class="w-64 p-2 border rounded-md"></textarea>
+        <button onclick="removeDuplicates()"
+            class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none">Remover Duplicados y
+            Copiar</button>
+        <textarea id="outputText" rows="10" class="w-64 p-2 border rounded-md" readonly></textarea>
+
+        <!-- Aviso temporal de copiado -->
+        <div id="copiedAlert"
+            class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-green-500 text-white text-xl rounded-xl opacity-0 transition-opacity duration-300 pointer-events-none">
+            Copiado al portapapeles
+        </div>
+    </div>
 
     <script>
         function removeDuplicates() {
@@ -23,9 +34,13 @@
             document.getElementById('outputText').value = uniqueLines.join('\n');
 
             const outputTextArea = document.getElementById('outputText');
-            outputTextArea.select();
             document.execCommand('copy');
-            alert('Texto sin duplicados copiado al portapapeles.');
+
+            const copiedAlert = document.getElementById('copiedAlert');
+            copiedAlert.style.opacity = "1";
+            setTimeout(() => {
+                copiedAlert.style.opacity = "0";
+            }, 600);
         }
     </script>
 
