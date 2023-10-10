@@ -34,6 +34,7 @@
             document.getElementById('outputText').value = uniqueLines.join('\n');
 
             const outputTextArea = document.getElementById('outputText');
+            outputTextArea.select();
             document.execCommand('copy');
 
             const copiedAlert = document.getElementById('copiedAlert');
