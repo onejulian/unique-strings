@@ -10,12 +10,14 @@
 
 <body class="bg-gray-100 h-screen flex items-center justify-center">
 
-    <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4">
-        <textarea id="inputText" rows="10" class="w-64 p-2 border rounded-md"></textarea>
-        <button onclick="removeDuplicates()"
-            class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none">Remover Duplicados y
-            Copiar</button>
-        <textarea id="outputText" rows="10" class="w-64 p-2 border rounded-md" readonly></textarea>
+    <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4 w-2/5">
+        <textarea id="inputText" rows="15" class="w-full p-2 border rounded-md"></textarea>
+        <div class="flex justify-center">
+            <button onclick="removeDuplicates()"
+                class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none">Remover Duplicados y
+                Copiar</button>
+        </div>
+        <textarea id="outputText" rows="15" class="w-full p-2 border rounded-md" readonly></textarea>
 
         <!-- Aviso temporal de copiado -->
         <div id="copiedAlert"
