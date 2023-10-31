@@ -13,8 +13,10 @@
     <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4 xl:w-2/5 sm:w-3/5 w-5/6">
         <textarea id="inputText" rows="15" class="w-full p-2 border rounded-md"></textarea>
         <div class="flex justify-center">
+            <button onclick="clean()"
+                class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 focus:outline-none mx-5">Limpiar</button>
             <button onclick="removeDuplicates()"
-                class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none">Remover Duplicados y
+                class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none mx-5">Remover Duplicados y
                 Copiar</button>
         </div>
         <textarea id="outputText" rows="15" class="w-full p-2 border rounded-md" readonly></textarea>
@@ -27,6 +29,10 @@
     </div>
 
     <script>
+        function clean() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+        }
         function removeDuplicates() {
             let input = document.getElementById('inputText').value;
 
