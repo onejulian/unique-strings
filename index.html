@@ -10,7 +10,7 @@
 
 <body class="bg-gray-100 h-screen flex items-center justify-center">
 
-    <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4 w-2/5">
+    <div class="relative bg-white p-8 rounded-xl shadow-md space-y-4 xl:w-2/5 sm:w-3/5 w-5/6">
         <textarea id="inputText" rows="15" class="w-full p-2 border rounded-md"></textarea>
         <div class="flex justify-center">
             <button onclick="removeDuplicates()"
@@ -20,7 +20,7 @@
         <textarea id="outputText" rows="15" class="w-full p-2 border rounded-md" readonly></textarea>
 
         <!-- Aviso temporal de copiado -->
-        <div id="copiedAlert"
+        <div id="copiedAlert" style="opacity: 0; margin-top: 0px;"
             class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-green-500 text-white text-xl rounded-xl opacity-0 transition-opacity duration-300 pointer-events-none">
             Copiado al portapapeles
         </div>
